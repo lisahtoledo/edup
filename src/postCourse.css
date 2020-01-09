@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-size: 1em;
+    font-family: 'Open Sans', sans-serif; 
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.container {
+    display: flex;
+    flex-basis: 1000px;
+    flex-wrap: wrap;
+    background-color: tomato;
+}
+
+.session {
+    margin: 0 auto;
+    background-color: yellowgreen;
+    max-width: 800px;
+    margin-top: 100px;
+    padding: 15px;
+}
+
+.form {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 5px;
+}
+
+.labels input[type=text], input[type=password]{
+    width: 45vh;
+    font-size: 15px;
+    border:0px solid #000;
+    border-bottom: 2px solid rgb(74, 82, 184);
+    height: 30px;
+    padding: 2px;
+    
+}
+
+.labels input.short {
+    width: 12.5vh;
+    margin: 5px;
+}
+
+@media(max-width: 576px) {
+    .form {
+        grid-template-columns: 1fr;
+    }
+}
