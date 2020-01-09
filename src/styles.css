@@ -86,6 +86,9 @@ select {
     border-bottom:2px solid #09aa03;
 }
 
+.itens {
+        background: #09aa03;
+}
 
 select::before{
     background-color: rgba(0,0,0,.15);
