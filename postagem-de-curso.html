@@ -10,165 +10,214 @@
 </head>
 <body>
     <section class="container">
-
+        
         <section class="session">
+            <section class="container">
+                <h1 class="title">Formulário De Postagem De Cursos</h1>
+                    <form method="POST" action="" class="form">
+                        <label class="labels">
+                            <input type="text" class="nome" name="nome" id="name" placeholder="Nome Dos cursos">
+                        </label> 
 
-        <h1 class="title">Formulário De Postagem De Cursos</h1>
-        <form method="POST" action="" class="form">
-            <label class="labels">
-                <input type="text" class="nome" name="nome" id="name" placeholder="Nome Dos cursos">
-            </label> 
+                        <label class="labels">
+                            <input type="text" class="nome" name="nome" id="name" placeholder="Carga Horaria">
+                        </label>
+                    
+                        <label class="labels">
+                            <input type="text" class="nome" name="nome" id="name" placeholder="Tags Plublico Alvo:">
+                        </label>  
+                    
+                        <label class="labels">
+                            <input type="text" class="nome" name="nome" id="name" placeholder="Área Do Curso:">
+                        </label> 
+                    
+                        <label class="labels">
+                            <input type="text" class="nome" name="nome" id="name" placeholder="Tipo de Bolsa:">
+                        </label>  
+                    
+                        <label class="labels">
+                            <input type="text" class="nome" name="nome" id="name" placeholder="Tempo De Postagem De Curso:">
+                        </label>  
+                    
+                        <label class="labels">
+                            <input type="text" class="nome" name="nome" id="name" placeholder="Área Do Curso:">
+                        </label> 
+                
+                    
+                        <label class="labels">
+                            <input type="text" class="nome" name="nome" id="name" placeholder="Justificativa:">
+                        </label>  
+                        
+                        
+                        <section class="container">
+                            <label class="labels">
+                                <h2>Frequência:</h2>
 
-            <label class="labels">
-                <input type="text" class="nome" name="nome" id="name" placeholder="Carga Horaria">
-            </label>
-        
-            <label class="labels">
-                <input type="text" class="nome" name="nome" id="name" placeholder="Tags Plublico Alvo:">
-            </label>  
-        
-            <label class="labels">
-                <input type="text" class="nome" name="nome" id="name" placeholder="Área Do Curso:">
-            </label> 
-        
-            <label class="labels">
-                <input type="text" class="nome" name="nome" id="name" placeholder="Tipo de Bolsa:">
-            </label>  
-        
-            <label class="labels">
-                <input type="text" class="nome" name="nome" id="name" placeholder="Tempo De Postagem De Curso:">
-            </label>  
-        
-            <label class="labels">
-                <input type="text" class="nome" name="nome" id="name" placeholder="Área Do Curso:">
-            </label> 
-       
-        
-            <label class="labels">
-                <input type="text" class="nome" name="nome" id="name" placeholder="Justificativa:">
-            </label>  
-        
-     
- 
-            
-            <label class="labels">
-            <span>Frequência:</span>
-        
-            <section class="container">
-                <input type="checkbox"/> Segunda
-                <input type="checkbox"/> Terça
-                <input type="checkbox"/> Quarta
-                <input type="checkbox"/> Quinta
-                <input type="checkbox"/> Sexta
-                <input type="checkbox"/> Sábado
-            </section>
-            </label> 
-        
-        
-            <section class="container">
-            <label class="labels">
-            <span>Periodo:</span>
-            <section class="container3.1">
-                <input type="checkbox"/>Manha
-                <input type="checkbox"/>Tarde
-                <input type="checkbox"/>Noite
-            </section>
-            </label> 
-        </section> 
-        
-            <section class="container">
-            <label class="labels">
-                <input type="text" placeholder="Data de inicio"/>
-                <input type="text" placeholder="Data de termino"/>
-            </label>
-            </section>
-            <br>
-            <label class="labels">
-            <span>Número máximo de inscrições:</span>
-            </label>  
-        
-            <section class="container">
-                <label class="labels">
-                    <span>Faixa etaria</span><br />            
-                    De: <input type="text" class="short"/>
-                    Ate:<input type="text" class="short"/>
-                </label> 
-            </section> 
-        
-            <section class="container">
-            <label class="labels">
-                <span>O local do seu curso é apto a PCD'S?</span>
-            
-                <section class="container5.1">
-                <input type="radio"/>Sim
-                <input type="radio"/>Não
-            </section>
-            </label> 
+                                        <label>
+                                            <input type="checkbox"/> Segunda
+                                        </label>
+                                        <label>
+                                            <input type="checkbox"/> Terça
+                                        </label>
+                                        <label>
+                                            <input type="checkbox"/> Quarta
+                                        </label>
+                                        <label>
+                                            <input type="checkbox"/> Quinta
+                                        </label>
+                                        <label for="">
+                                            <input type="checkbox"/> Sexta
+                                        </label>
+                                        <label>
+                                            <input type="checkbox"/> Sábado
+                                        </label>
+                            </label> 
+                            <label class="labels">
+                                    <span>Início:  </span>
+                                    <input type="date" /><br />
+                                    <span>Término: </span>
+                                    <input type="date" />
+                            </label>
+                        </section>
+                        
+                    
+                    
+                        <section class="container">
+                            <label class="labels">
+                                <h2>Periodo:</h2>
+                                <section>
+                                    <input type="checkbox"/>Manha
+                                    <input type="checkbox"/>Tarde
+                                    <input type="checkbox"/>Noite
+                                </section>
+                                <section>
+                                    <span>Início:  </span>
+                                    <input type="date" /><br />
+                                    <span>Término: </span>
+                                    <input type="date" />
+                                </section>
+                            </label> 
+                        </section> 
+                    
+                        <section class="container">
+                        
+                        
+                        <br>
+                            <label class="labels">
+                                <h2>Número máximo de inscrições:</h2>
+                                <input type="number" min="10">
+                            </label>  
+                        </section>
+                        <section class="container">
+                            <label class="labels">
+                                <h2> Faixa etaria</h2><br />            
+                                De: <input type="text" class="short"/>
+                                Ate:<input type="text" class="short"/>
+                            </label> 
+                        </section> 
+                    
+                        <section class="container">
+                        <label class="labels">
+                            <h2>O local do seu curso é apto a PCD'S?</h2>
+                        
+                            
+                                <input type="radio"/>Sim
+                                <input type="radio"/>Não
+                            
+                        </label> 
+                    </section>
+                        <section class="container">
+                        <label class="labels">
+                        <h2>O curso contempla pessoas portadoras de deficiência?Se sim,Qual deficiência?</h2>
+                    
+                        <section class="container6.1">
+                            <input type="radio" name="pcd"/>Sim
+                            <input type="radio" name="pcd"/>Não
+                        </section>
+                        </label> 
+                        </section> 
+                    <section class="container">
+                        <h2>Áreas contempladas: </h2>
+                        <br />
+                        <input type="text" name="" id="">
+                    </section>
+                        
+                    
+                    <section class="container long">
+                        
+                        <h2 class="long">O curso contempla pessoas com que nível de escolaridade?</h2>
+                        <label for="">
+                            <input type="checkbox"> Analfabeto
+                        </label>
+                        <label class="labels">
+                            <input type="checkbox"> Fundamental | incompleto
+                        </label>
+                        <label class="labels">
+                        <input type="checkbox"> Fundamental || incompleto
+                        </label>
+                        <label class="labels">
+                            <input type="checkbox"> Superior Incompleto/Superior Completo
+                        </label>
+                        <label class="labels">
+                            <input type="checkbox"> Pós Graduado
+                        </label>
+                        <label class="labels">
+                            <input type="checkbox"> Fundamental I completo
+                        </label>
+                        <label>
+                            <input type="checkbox"> Fundamental II / incompleto 
+                        </label>
+                        <label for="" class="labels">
+                            <input type="checkbox"> Médio incompleto / Médio Completo
+                        </label>
+                        <label for="">
+                            <input type="checkbox"> Mestrado
+                        </label>
+                        <label class="labels">
+                            <input type="checkbox"> Doutorado
+                        </label>
+                    </section>
+                    
+                    
+                    
+                    <section class="container long">
+                        <h2 class="long">Endereço da Unidade</h2>
+                            <label for="" class="labels">
+                                <input type="text" placeholder="CEP"> 
+                            </label>
+                            <label for="" class="labels">
+                                <input type="text" placeholder="Rua"> 
+                            </label>
+                            <label for="" class="labels">
+                                <input type="text" placeholder="Bairro">
+                            </label>
+                            <label for="" class="labels">
+                                <input type="text" placeholder="Cidade">
+                            </label>
+                                <input type="number" placeholder="N°">
+                            <label class="labels">
+                                <input type="text" placeholder="Estado">
+                            </label>
+                            <label for="" class="labels">
+                                <input type="text" placeholder="Colaboradores">
+                            </label>
+                            <label for="" class="labels">
+                                <input type="text" placeholder="Prerequisitos">
+                            </label>
+                            <label for="" class="labels">
+                                <input type="text" placeholder="Conteudo do curso ">
+                            </label>
+                            <label for="" class="labels">
+                                <input type="text" placeholder="Descrição">
+                            </label>
+                        </section>
+                    
+                
+                        <section class="fim long">
+                            <input type="submit" value="Finalizar Cadastro" class="finalizar" />
+                        </section>
+                </form>
         </section>
-            <section class="container">
-            <label class="labels">
-            <span>O curso contempla pessoas portadoras de deficiência?Se sim,Qual deficiência?</span>
-        
-            <section class="container6.1">
-                <input type="radio"/>Sim
-                <input type="radio"/>Não
-            </section>
-            </label> 
-            </section> 
-        
-            <span>Áreas contempladas</span>
-        
-            <section class="container7">
-        <label class="labels">
-            <span>O curso contempla pessoas com que nível de escolaridade?</span>
-        
-            <section class="container7.1">
-            <input type="checkbox"> Analfabeto
-            <input type="checkbox"> Fundamental | incompleto
-            <input type="checkbox"> Fundamental || incompleto
-            <input type="checkbox"> Superior Incompleto/Superior Completo
-            <input type="checkbox"> Pós Graduado
-            <input type="checkbox"> Fundamental I completo
-            <input type="checkbox"> Fundamental II / incompleto 
-            <input type="checkbox"> Médio incompleto / Médio Completo
-            <input type="checkbox"> Mestrado
-            <input type="checkbox"> Doutorado
-        </section>
-        </label>
-        </section>
-        
-            <section class="container">
-            <label class="labels">
-            <span>Endereço da Unidade</span>
-         
-            <section class="container">
-            <input type="text" placeholder="CEP"> CEP
-            <input type="text" placeholder="Rua"> Rua
-            <input type="text" placeholder="Bairro"> Bairro
-            <input type="text" placeholder="Cidade"> Cidade
-            <input type="text" placeholder="N°"> N°
-            <input type="text" placeholder="Estado"> Estado
-        </section>
-        </label>
-        </section>
-        
-            <section class="container">
-                <label class="labels">
-            <input type="text" placeholder="Colaboradores">
-        
-            <input type="text" placeholder="Prerequisitos">
-        
-            <input type="text" placeholder="Conteudo do curso ">
-        
-            <input type="text" placeholder="Descrição">
-                </label>
-            </section>
-        
-    
-            <section class="session">
-                <input type="submit" value="Finalizar cadastro" class="finalizar" />
-            </section>
-        </form>
     </section>
 </body>
 </html>
