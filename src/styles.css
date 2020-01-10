@@ -21,7 +21,6 @@ a {
 .form {
     max-width: 800px;
     padding: 50px;
-
     margin: 50px auto;
     border-radius: 50px;
     box-shadow: 8px 8px 45px rgba(0, 0, 0, 0.1);
@@ -31,7 +30,8 @@ a {
     border-radius: 5px;
     box-shadow: 4px 4px 13px rgba(0,0,0,0.35);
     padding: 15px;
-    width: 110vh;
+    /* width: 110vh; */
+    flex-basis: 500px;
     margin: 25px;
     display: grid;
     grid-template-columns: repeat(2,1fr);
@@ -45,7 +45,7 @@ label{
 }
 
 
-input[type=text], input[type=password]{
+input[type=text], input[type=password], input[type=date], input[type=number]{
     width: 45vh;
     font-size: 15px;
     border:0px solid #000;
@@ -73,7 +73,7 @@ input[type=text]::-moz-placeholder, input[type=password]::-moz-placeholder{
 select {
     width: 45vh;
     background-color: rgb(255, 255, 255);
-    border: 0.5px solid rgba(0, 0, 0, 0.1);
+    border: 0.5px solid rgba(0,0,0,0.1);
     border-bottom: 2px solid #09aa03;
     height: 35px;
     border-radius: 2px;
@@ -82,7 +82,7 @@ select {
 
 
 .esp {
-    max-width: 21vw;
+    width: 45vh;
     border-bottom:2px solid #09aa03;
 }
 
@@ -108,8 +108,24 @@ select::before{
     background-color: rgb(4, 94, 41);
 }
 
-@media(max-width: 612px){
-    .session{
-        grid-template-columns: 1fr;
+@media(max-width: 800px){
+    .session {
+        display: flex;
+        flex-direction: column;
     }
+
+    .finalizar {
+        height: 7vh;
+        width: 25vh;
+    }
+}
+
+
+@media(max-width: 750px){
+    .session{
+        width: 50vh;
+        display: flex;
+        flex-direction: column;
+    }
+
 }
