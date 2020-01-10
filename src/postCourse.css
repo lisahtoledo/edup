@@ -31,10 +31,10 @@ h2{
 
 .session {
     margin: 0 auto;
-    background-color: yellowgreen;
+    background-color: #f2f2f2;
     max-width: 800px;
     margin-top: 100px;
-    padding: 15px;
+    padding: 25px;
     border-radius: 15px;
     box-shadow: 15px 15px 25px rgba(0,0,0,0.35);
 }
@@ -71,8 +71,8 @@ h2{
 
 .finalizar {
     margin-top: 25px;
-    width: 20vw;
-    height: 3vw;
+    width: 40vh;
+    height: 7vh;
     border: 1px solid rgb(0, 158, 26);
     background-color: #09aa03;
     color: #fff;
@@ -86,15 +86,23 @@ h2{
 
 .fim {
   
-    width: 100px;
-    background: #fff;
+    width: 40vh;
+    /* background: tomato; */
     justify-self: center;
     margin-right: 120px;
-
+    display: flex;
 }
 
-@media(max-width: 786px) {
+@media(max-width: 650px) {
     .form {
         grid-template-columns: 1fr;
     }
+    .long {
+        grid-template-columns: 1fr;
+        grid-column: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+   
 }
