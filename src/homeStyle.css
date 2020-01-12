@@ -139,6 +139,11 @@ img {
     align-items: center;
     border-bottom: 7px solid #202F36;
 }
+/* logo */
+.logo {
+    margin: 15px;
+}
+
 /* map site */
 .links {
     display: flex;
