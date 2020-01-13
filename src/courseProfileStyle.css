@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-size: 1em;
+    font-family: 'Open Sans', sans-serif; 
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+img{
+    width: 100%;
+}
+
+.container {
+    max-width: 1366px;
+    margin: 20 auto;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* card */
+
+.card-course {
+    background-color:#fff;
+    margin: 15px;
+    box-shadow: -4px 4px #419CA1;
+    border-radius: 15px;
+    padding: 15px;
+    width:45vh;
+}
+
+/* card course */
+
+.card-course label{
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.card-course div {
+    padding: 7px;
+    border-radius: 5px;
+    margin-left: 4px;
+}
+
+.props-course div:nth-child(5){
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px;
+}
+
+.props-course div:nth-child(n+5), div:nth-child(n+5) div{
+    box-shadow: none;
+}
+
+.props-course div:nth-child(5) div{ 
+    margin:15px auto;
+}
+.props-course a{
+    background-color: #FCDE32;
+    padding: 15px 75px;
+    border-radius: 7px;
+    font-weight: bold;
+}
+
+
+/* Img profile */
+
+.img-profile {
+    margin-top:25px;
+}
+
+.img-profile img{
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Descricao */
+
+.description {
+    flex-basis: 700px;
+}
+
+.description p{
+    font-size: 1.3rem;
+    flex-basis: 700px;
+    padding: 25px;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 5px;
+}
+
+/* tags */
+
+.tags {
+    margin-left: 55px;
+    box-shadow: 4px 4px #419CA1;
+    border-radius: 4px;
+}
+
+.tags figure{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.tags img{
+    width: 18vh;
+}
+
+/* compay */
+
+.company {
+    flex-basis: 700px;
+}
+.desc {
+    background-color: #fff;
+    display: flex;
+    flex-basis:800px ;
+    border-radius: 7px;
+    margin: 15px;
+    padding: 15px;
+    align-items: center;
+    box-shadow: 4px 4px #419CA1;
+}
+
+.desc h1{
+    flex-basis: 800px;
+}
+
+.desc img {
+    width:15vh;
+}
+
+.desc label{ 
+    font-size: 1.5rem;
+    text-align: center;
+}
