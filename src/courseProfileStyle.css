@@ -84,16 +84,24 @@ img{
 /* Descricao */
 
 .description {
-    flex-basis: 700px;
+    margin: 10px;
+    flex-basis: 910px;
+    box-shadow: 2px 2px 8px rgba(67, 69, 70, 0.507);
 }
 
 .description p{
     font-size: 1.3rem;
     flex-basis: 700px;
     padding: 25px;
-    background-color: #fff;
+    /*background-color: #fff;
     border: 2px solid #000;
-    border-radius: 5px;
+    border-radius: 5px;*/
+}
+
+.description h1{
+    font-size: 30px;
+    text-align: center;
+    margin: 5px;
 }
 
 /* tags */
@@ -102,6 +110,7 @@ img{
     margin-left: 55px;
     box-shadow: 4px 4px #419CA1;
     border-radius: 4px;
+    background-color: #fff;
 }
 
 .tags figure{
@@ -111,27 +120,30 @@ img{
 }
 
 .tags img{
-    width: 18vh;
+    width: 16vh;
 }
 
 /* compay */
 
 .company {
-    flex-basis: 700px;
+    margin: 20px;
+    flex-basis: 1110px;
 }
 .desc {
-    background-color: #fff;
+    background-color: rgba(97, 89, 89, 0.13);
     display: flex;
     flex-basis:800px ;
     border-radius: 7px;
     margin: 15px;
     padding: 15px;
     align-items: center;
-    box-shadow: 4px 4px #419CA1;
+    box-shadow: 2px 2px 8px rgba(67, 69, 70, 0.507);
 }
 
 .desc h1{
-    flex-basis: 800px;
+text-align:  center;
+
+
 }
 
 .desc img {
@@ -141,4 +153,10 @@ img{
 .desc label{ 
     font-size: 1.5rem;
     text-align: center;
+}
+
+@media(max-width:880px){
+    .tags figure{
+        display: inline;
+    }
 }
