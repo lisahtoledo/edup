@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/styles.css">
+    
+</head>
+<body>
+    <section class="container">
+        <form method="POST" action="" class="form">
+            <h1>
+                Formulario de cadastro de aluno
+            </h1>
+            <section >
+                <section class="session">
+                <label for="" class="labels">
+                    <input type="text" name="" id="" placeholder="Nome completo" class="long"/>
+                </label>
+                <label for=""  class="labels">
+                    <input type="text" name="" id="" placeholder="RG"  class="short" />
+                </label>
+                <label for=""  class="labels">
+                    <input type="text" name="" id="" placeholder="Orgão expeditor" class="short"/>
+                </label>
+                <label for=""  class="labels">
+                    <input type="text" name="" id="" placeholder="CPF"  class="short" />
+                </label>
+                <label for=""  class="labels">
+                    <input type="text" name="" id="" placeholder="Etnia"  class="short" />
+                </label>
+                <label for=""  class="labels">
+                    <input type="text" name="" id="" placeholder="Data de nascimento"  class="short" />
+                </label>
+                <label for=""  class="labels esp">
+                    <p>Possui alguma necessidade especial?</p>
+                    <input type="radio" name="pcds" value="yes">Sim
+                    <input type="radio" name="pcds" value="no">Não
+                    <!-- colocaria um de sim e não, aí se clicassem em sim, aparecesse uma caixinha de texto para especificar -->
+                </label>
+                <label for=""  class="labels esp">
+                    <p>Sexo: </p>
+                    <input type="radio" name="sex" id="" value="M" required /> Masculino
+                    <input type="radio" name="sex" id="" value="F" required /> Feminino
+                    <input type="radio" name="sex" id="" value="O" required /> Outros
+                </label>
+                <label for=""  class="labels esp">
+                    <p>É LGBTQIA+?</p>
+                    <input type="radio" name="" id="" value="Y"> Sim
+                    <input type="radio" name="" id="" value="N"> Não
+                    <!-- vamos especificar qual? Não seria legal? -->
+                </label>
+                <label for=""  class="labels">
+                    <input type="text" name="" id="" placeholder="Naturalidade" class="short" />
+                </label>
+                <label for=""  class="labels">
+                    <input type="text" name="" id="" placeholder="Nacionalidade" class="short" />
+                </label>
+            </section>
+            <section class="session">
+
+                <h1>Endereço</h1>
+                <label for=""  class="labels">
+                    <input type="text" name="" id="" placeholder="CEP" class="short" />
+                </label>
+                <label for=""  class="labels">
+                    <input type="text" name="" id="" placeholder="Estado" class="short" />
+                </label>
+                <label for=""  class="labels">
+                    <input type="text" name="" id="" placeholder="Cidade" class="short" />
+                </label>
+                <label for=""  class="labels">
+                    <input type="text" name="" id="" placeholder="Endereço" class="long">
+                </label>
+                <label for=""  class="labels">
+                    <input type="text" name="" id="" placeholder="Bairro" class="short" />
+                </label>
+                <label for=""  class="labels">
+                    <input type="text" name="" id="" placeholder="Complemento" class="short" />
+                </label>
+                <label for=""  class="labels">
+                    <input type="text" name="" id="" placeholder="Telefone celular" class="short" />
+                    <br /><input type="checkbox" name="wpp" id=""> É WhatsApp
+                </label>
+                <label for=""  class="labels">
+                    <input type="text" name="" id="" placeholder="Telefone fixo" class="short" />
+                </label>
+                <label for=""  class="labels">
+                    <p><input type="checkbox" name="" id=""> O telefone informado é de algum
+                        familiar ou pessoa próxima?</p>
+                </label>
+            </section>
+            <section class="session">
+                <h1>Senha: </h1>
+                <label for="">
+                    <input type="password" name="" id="" placeholder="Senha" class="short" />
+                </label>
+                <label for="">
+                    <input type="password" name="" id="" placeholder="Confirmação de Senha" class="short">
+                </label>
+                <label for="">
+            </section>
+            <section class="session">
+                    <h1>Disponilidade de turnos</h1>
+                    <div class="turno">
+                        <input type="checkbox" name="" id=""> Manhã
+                        <input type="checkbox" name="" id=""> Tarde
+                        <input type="checkbox" name="" id=""> Noite
+                    </div>
+                </label>
+            </section>
+
+
+            <section class="session">
+
+                <h1>Dados acadêmicos</h1>
+                <label for="">
+                    <select class="short">
+                        <option value="">Escolaridade</option>
+                    </select>
+                </label>
+                <label for="">
+                    <h2>Fez: </h2>
+                    <input type="checkbox" name="" id=""> Pré-vestibular
+                    <input type="checkbox" name="" id=""> Supletivo
+                </label>
+                <label for="">
+                   <br /> <input type="text" placeholder="Nome da Escola" class="short">
+                </label>
+                <label for="">
+                    <select name="" id="" class="short">
+                        <option value="">Exatas</option>
+                        <option value="">Humanas</option>
+                        <option value="">Biológicas</option>
+                    </select>
+                    <!-- colocaria uma seleção com várias caixinhas para selecionarem áreas e passaria o de línguas para cá porque está desorganizado -->
+                </label>
+                <label for="">
+                    <h2>
+                        Preferência de lingua
+                    </h2>
+                    <div>
+                        <input type="checkbox" name="" id=""> Português
+                        <input type="checkbox" name="" id=""> Espanhol
+                        <input type="checkbox" name="" id=""> Inglês
+                        <input type="checkbox" name="" id=""> Outro
+                    </div>
+                </label>
+            </section>
+            <section class="session">
+                <h1>Caso seja menor de idade</h1>
+                <!-- colocar um checkbox se é menor de idade, ou quando colocar a data de nascimento, abrir esse campo caso seja menor de 18 -->
+                <label for="">
+                    <input type="text" name="" id="" placeholder="Nome do responsável" class="long">
+                </label>
+                <label for="">
+                    <input type="text" name="" id="" placeholder="Profissão" class="short">
+                </label>
+                <!-- perguntar o nível de escolaridade do responsável, CPF e renda -->
+                <label for="">
+                    <select name="" id="" class="short">
+                        <option value="">Fundamental</option>
+                    </select>
+                </label>
+                <label for="">
+                    <input type="text" name="" id="" placeholder="Estado civil">
+                </label>
+                <label for="">
+                    <input type="text" name="" id="" placeholder="CPF" class="short">
+                </label>
+            </section>
+            <section class="session">
+                <h1>Renda percapita</h1>
+                <label for="">
+                    <input type="number" placeholder="Número de pessoas que moram em sua residência">
+                    <!-- tem que abrir um desse para cada pessoa. Acho melhor completar uma tabela com os dados do que individualmente. Tabela inicializar com o número de pessoas que moram na residência, e a própria pessoa tem que estar inclusa. Talvez fazer a pergunta sem ser placeholder, do lado de fora mesmo -->
+                </label>
+                <section>
+                    <label for="">
+                        <input type="text" placeholder="Nome" class="long" />
+                    </label>
+                    <label for="">
+                        <input type="date" placeholder="Data de Nascimento" />
+                    </label>
+                
+                    <label for="">
+                        <label for="">
+                            Estado Civil
+                            <p><input type="radio" name="estcivil" value="solteiro"/> Solteiro(a)</p>
+                            <p><input type="radio" name="estcivil" value="casado"/> Casado(a)</p>
+                            <p><input type="radio" name="estcivil" value="viuvo"/> Viúvo(a)</p>
+                            <p><input type="radio" name="estcivil" value="divorciado"/> Divorciado(a)</p>
+                        </label>
+                    </label>
+                    <label for="">
+                        <input type="text" placeholder="Profissão" />
+                    </label>
+                
+                    <label for="">
+                        <input type="text" placeholder="Renda bruta" />
+                    </label>
+                    <label for="">
+                        <select name="" id="">
+                            <option value="#">Grau de escolaridade</option>
+                        </select>
+                    </label>
+                </section>
+                <section class="session">
+                    <h1>
+                        Informações adicionais
+                    </h1>
+                    <input type="text" placeholder="Como conheceu a gente?" class="short"/>
+                    <input type="text" placeholder="O que te motiva ir até o final de um curso?" class="short"/>
+                    <!-- essa de motivação não é uma boa pergunta, melhor marcar para adaptarmos. "o que te motiva a fazer o curso" talvez já seja melhor -->
+                </section>
+                <input type="submit" value="Finalizar cadastro" class="finalizar" />
+            </form>
+        </section>
+
+
+
+    
+</body>
+</html>
