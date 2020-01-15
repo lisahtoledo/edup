@@ -37,7 +37,7 @@ const Head = styled.header`
     justify-content: space-between;
     align-items: center;
     padding: 5px;
-    box-shadow: 4px 4px 4px rgba(0,0,0,25);
+    box-shadow: 6px 6px 8px rgba(0,0,0,0.25);
 
 
 .menu {

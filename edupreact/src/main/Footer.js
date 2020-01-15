@@ -38,12 +38,12 @@ export default function Footer() {
 const Boot = styled.footer`
 
 
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    border-bottom: 7px solid #202F36;
-    box-shadow: 0px -4px 8px rgba(0,0,0,0.25);
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+align-items: center;
+border-bottom: 7px solid #202F36;
+box-shadow: 0px -4px 8px rgba(0,0,0,0.25);
 
 /* logo */
 .logo {
