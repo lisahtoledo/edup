@@ -1,12 +1,16 @@
 import React from 'react';
 
 import './style/footer.css'
+import LogoFooter from '../img/logo-2.svg'
+import facebook from '../img/facebook.svg'
+import twitter from '../img/twitter.svg'
+import linkedin from '../img/linkedin.svg'
 
 export default function Footer() {
   return (
     <footer  class="footer">
             <section class="logo">
-                <img src="./img/logo-2.svg" alt="" />
+                <img src={ LogoFooter } alt="" />
             </section>
             <section class="links">
                 &copy; EdUP 2020
@@ -18,9 +22,9 @@ export default function Footer() {
             </section>
             <section class="social">
                 <figure>
-                    <img src="./img/facebook 1.svg" alt="facebook rede social" />
-                    <img src="./img/twitter 1.svg" alt="twitter rede social" />
-                    <img src="./img/linkedin.svg" alt="linkedin rede social" />
+                    <img src={ facebook } alt="facebook rede social" />
+                    <img src={ twitter } alt="twitter rede social" />
+                    <img src={ linkedin } alt="linkedin rede social" />
                 </figure>
             </section>
         </footer>
