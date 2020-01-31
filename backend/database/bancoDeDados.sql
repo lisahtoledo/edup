@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS est_cad(
 DESC resp_cad;
 
 CREATE TABLE IF NOT EXISTS resp_cad(
-	resp_id INT PRIMARY KEY NOT NULL,
+	resp_id INT PRIMARY KEY,
     resp_nome VARCHAR(100),
 	resp_prof VARCHAR(50),
     resp_grau_esc VARCHAR(25),
