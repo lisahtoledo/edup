@@ -89,3 +89,56 @@ a {
     border-bottom: 3px solid #1C596E;
     border-radius: 1px;
 }
+/*header*/
+.header {
+    background-color: #202F36;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    box-shadow: 4px 4px 4px rgba(0,0,0,1);
+}
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.cad-login a{
+   margin: 15px;
+}
+.cad-login a:nth-child(1){
+    color: #fff;
+    font-weight: bolder;
+}
+
+.cad-login a:nth-child(2){
+    background-color: #FCDE32;
+    padding: 12px;
+    border-radius: 9px;
+    font-weight: 520;
+}
+
+.logo-search {
+    margin-left:15px;
+}
+
+.logo-search label{
+    margin-left: 50px;
+}
+
+.logo-search input{
+    background-color: #1C596E;
+    height: 35px;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.logo-search input::-moz-placeholder{
+    color: #fff;
+    opacity: 1;
+    font-weight: 530;
+}
