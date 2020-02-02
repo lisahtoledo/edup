@@ -6,6 +6,7 @@ body {
     font-size: 1em;
     font-family: 'Open Sans', sans-serif; 
 }
+/*HEADER*/
 .header {
     background-color: #202F36;
     display: flex;
@@ -76,3 +77,49 @@ a {
     
 }
 
+/* FOOTER COMPLET*/
+
+/* footer */
+.footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 7px solid #202F36;
+}
+/* logo */
+.logo {
+    margin: 15px;
+}
+
+/* map site */
+.links {
+    display: flex;
+}
+
+.links ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.links ul li {
+    margin-left: 25px;
+}
+
+/* social */
+
+.social figure{
+    display: flex;
+
+}
+
+.social figure img{
+    margin-left: 35px;
+}
+
+@media(max-width: 725px) {
+    .beginner {
+        text-align: center;
+    }
+}
