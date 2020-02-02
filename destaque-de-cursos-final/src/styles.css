@@ -1,0 +1,110 @@
+body {
+  font-family: sans-serif;
+  background: #202f36 url(images/fundoMenor.svg);
+}
+
+.caixa {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.des {
+  font-size: 40px;
+  font-family: Roboto;
+  font-style: normal;
+  text-align: center;
+  background: #202f36;
+}
+
+.amarelo {
+  font-size: 40px;
+  font-family: Roboto;
+  font-style: normal;
+  text-align: center;
+  background: #202f36;
+  color: #f7b600;
+}
+
+/* Slider */
+/*.galeria {
+  margin: 20px auto;
+   width: 1920px;
+  height: 1080px; 
+  position: relative;
+  overflow: hidden;
+}
+
+.foto {
+  position: absolute;
+  opacity: 0;
+  animation-name: animacao;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes animacao {
+  25% {
+    opacity: 1;
+    transform: scale(1.1, 1.1);
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.foto:nth-child(1) {
+}
+.foto:nth-child(2) {
+  animation-delay: 5s;
+}
+.foto:nth-child(3) {
+  animation-delay: 10s;
+}*/
+
+/* cursos */
+.container {
+  margin-top: 100px;
+  width: 350px;
+  height: 484px;
+  background-color: #fff;
+}
+.cont {
+  margin-left: 20px;
+  margin-top: 17px;
+}
+
+img {
+  width: 350px;
+}
+h1 {
+  padding: 7px;
+  font-weight: normal;
+  background-color: #fff;
+  width: 45vh;
+}
+div {
+  display: flex;
+  margin-top: -6px;
+}
+div p {
+  margin-right: 5px;
+  font-size: 15px;
+  margin-top: -6px;
+  padding: 4px;
+  background-color: #fff;
+}
+.cont1 {
+  font-size: 15px;
+  background-color: #fff;
+  height: 15vh;
+  width: 45vh;
+  padding: 7px;
+  margin-top: 15px;
+}
+.king {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+}
