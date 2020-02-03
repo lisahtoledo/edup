@@ -5,6 +5,7 @@
 body {
     font-size: 1em;
     font-family: 'Open Sans', sans-serif; 
+    background-image: url("../img/fundoMenor.svg");
 }
 
 a {
@@ -169,7 +170,7 @@ text-align:  center;
     justify-content: space-between;
     align-items: center;
     padding: 5px;
-    box-shadow: 4px 4px 4px rgba(0,0,0,1);
+    
 }
 .menu {
     display: flex;
