@@ -35,7 +35,7 @@ a{
 }
 
 .pai:hover{
-    transition: box-shadow 0.5s;
+    transition: box-shadow 1s;
     transition: margin-top 0.5s;
     box-shadow: 6px 5px rgba(0,0,0,0.4);
     margin-top: -15px;
@@ -91,6 +91,7 @@ a{
 /* map site */
 .links {
     display: flex;
+    align-items: center;
 }
 
 .links ul{
