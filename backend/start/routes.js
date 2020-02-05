@@ -2,11 +2,13 @@
 
 const Route = use('Route')
 
-Route.post('users', 'UserController.store')
-Route.post('sessions', 'SessionController.store')
+Route.post('users', 'UserController.store').validator('User')
+Route.post('sessions', 'SessionController.store').validator('Session')
 
-Route.post('passwords', 'ForgotPassordController.store')
-Route.put('passwords', 'ForgotPassordController.update')
+Route.resource('enterprise', 'EnterpriseController').validator('Enterprise').apiOnly()
 
-Route.post('/files', 'FileController.store')
+Route.post('passwords', 'ForgotPassordController.store').validator('ForgotPassword')
+Route.put('passwords', 'ForgotPassordController.update').validator('ResetPassword')
+
+Route.post('/files', 'FileController.store').validator('File')
 Route.get('/files/:id', 'FileController.show')

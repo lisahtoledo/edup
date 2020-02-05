@@ -20,6 +20,13 @@ class CourseSchema extends Schema {
         .references('id')
         .inTable('files')
         .onUpdate('CASCADE')
+        .onDelete('SET NULL')
+      table
+        .integer('enterprise_id')
+        .unsigned()
+        .references('id')
+        .inTable('enterprises')
+        .onUpdate('CASCADE')
         .onDelete('CASCADE')
       table.string('title').notNullable()
       table.text('description').notNullable()
