@@ -5,6 +5,7 @@
 body {
     font-size: 1em;
     font-family: 'Open Sans', sans-serif; 
+    background-image: url("../img/fundoMenor.svg");
 }
 /*HEADER*/
 .header {
@@ -79,13 +80,13 @@ a {
 
 /* FOOTER COMPLET*/
 
-/* footer */
 .footer{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
     border-bottom: 7px solid #202F36;
+    background-color: #FFFFFF;
 }
 /* logo */
 .logo {

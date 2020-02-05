@@ -5,6 +5,7 @@
 body {
     font-size: 1em;
     font-family: 'Open Sans', sans-serif; 
+    background-image: url("../img/fundoMenor.svg");
 }
 
 a {
@@ -28,7 +29,7 @@ img {
     justify-content: space-between;
     align-items: center;
     padding: 5px;
-    box-shadow: 4px 4px 4px rgba(0,0,0,1);
+
 }
 
 .menu {
@@ -138,6 +139,7 @@ img {
     justify-content: space-around;
     align-items: center;
     border-bottom: 7px solid #202F36;
+    background-color: #FFFFFF;
 }
 /* logo */
 .logo {
@@ -174,4 +176,17 @@ img {
     .beginner {
         text-align: center;
     }
+}
+
+/*   ARTICLE    */ 
+article{
+    text-align: center;
+    font-size: 50px;
+    width: 200px;
+    background-color: #FCDE32;
+    border-radius: 10px;
+}
+.ver{
+    display:flex ;
+    justify-content: center;
 }

@@ -1,0 +1,204 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    background-color: #202F36;
+    max-width: 1366px;
+}
+ol{
+width: 70vh;
+list-style: none;
+}
+li{
+    font-weight: none;
+    text-align: center;
+}
+a{
+    color: #000;
+    text-decoration: none;
+}
+
+.header {
+    background-color: #202F36;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.cad-login a{
+    margin: 15px;
+}
+.cad-login a:nth-child(1){
+    color: #fff;
+    font-weight: bolder;
+}
+
+.cad-login a:nth-child(2){
+    background-color: #FCDE32;
+    padding: 12px;
+    border-radius: 9px;
+    font-weight: 520;
+}
+
+.logo-search {
+    margin-left:15px;
+}
+
+.logo-search label{
+    margin-left: 50px;
+}
+
+.logo-search input{
+    background-color: #1C596E;
+    height: 35px;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.logo-search input::-moz-placeholder{
+    color: #fff;
+    opacity: 1;
+    font-weight: 530;
+}
+
+
+.cabecalho{
+    display: flex;
+    flex-direction: column;
+}
+
+.pai{
+    padding: 3vh;
+    min-width: 40vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #C4C4C4;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.pai:hover{
+    transition: box-shadow 1s;
+    transition: margin-top 0.7s;
+    box-shadow: 6px 5px 25px rgba(0,0,0,0.7);
+    margin-top: -15px;
+}
+
+.pai div img{
+    margin: 15px 5px;
+}
+
+.pai div img:hover{
+    border-bottom: 1px solid #000;
+}
+
+.p1{
+    font-weight: bold;
+    font-size: 24px;
+    color:#4F4F4F;
+    margin-bottom: 20px;
+}
+.p2{
+    font-size: 18px;
+    color: #FFFFFF;
+}
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    grid-gap: 15px;
+    background-image: url('../img/fundoMenor.svg');
+}
+
+.titulo{
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.titulo span{
+    color: rgb(255, 239, 17);
+}
+
+.navio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* footer */
+.footer{
+    margin-top:25px;
+    display: flex;
+    font-size: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #FFFFFF;
+}
+/* logo */
+.logo {
+    margin: 15px;
+}
+
+/* map site */
+.links {
+    display: flex;
+    align-items: center;
+}
+
+.links ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.links ul li {
+    margin-left: 25px;
+}
+
+/* social */
+
+.social figure{
+    display: flex;
+
+}
+
+.social figure img{
+    margin-left: 35px;
+}
+
+@media(max-width: 870px) {
+    .container{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(max-width: 725px) {
+    .beginner {
+        text-align: center;
+    }
+}
+
+@media(max-width: 585px) {
+    .container{
+        grid-template-columns: 1fr;
+    }
+}
