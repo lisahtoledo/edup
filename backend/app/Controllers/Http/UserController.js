@@ -23,6 +23,16 @@ class UserController {
     }
     return auth.user
   }
+
+  async update ({ auth, params }) {
+    if (auth.user.id !== Number(params.id)) {
+      return "You cannot see someone else's profile"
+    }
+    const user = await User.findOrFail(1)
+      .then(() => console.log('Resolve updated user'))
+      .catch(() => console.log('Death updated is not resolved'))
+    return user
+  }
 }
 
 module.exports = UserController

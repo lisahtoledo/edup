@@ -6,6 +6,8 @@ Route.post('users', 'UserController.store')
   .validator('User')
 Route.get('users/:id', 'UserController.show')
   .middleware('auth')
+Route.put('users/:id', 'UserController.update')
+  .middleware('auth')
 
 /* Login user */
 Route.post('sessions', 'SessionController.login')
