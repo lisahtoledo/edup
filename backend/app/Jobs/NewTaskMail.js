@@ -10,7 +10,7 @@ class NewTaskMail {
   }
 
   async handle (data) {
-
+    console.log('NewTaskMail-jobs started')
   }
 }
 

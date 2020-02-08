@@ -5,12 +5,12 @@
 /** @typedef {import('@adonisjs/framework/src/View')} View */
 
 /**
- * Resourceful controller for interacting with enterprises
+ * Resourceful controller for interacting with usercourseselecteds
  */
-class EnterpriseController {
+class UserCourseSelectedController {
   /**
-   * Show a list of all enterprises.
-   * GET enterprises
+   * Show a list of all usercourseselecteds.
+   * GET usercourseselecteds
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -21,8 +21,8 @@ class EnterpriseController {
   }
 
   /**
-   * Render a form to be used for creating a new enterprise.
-   * GET enterprises/create
+   * Render a form to be used for creating a new usercourseselected.
+   * GET usercourseselecteds/create
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -33,8 +33,8 @@ class EnterpriseController {
   }
 
   /**
-   * Create/save a new enterprise.
-   * POST enterprises
+   * Create/save a new usercourseselected.
+   * POST usercourseselecteds
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -44,8 +44,8 @@ class EnterpriseController {
   }
 
   /**
-   * Display a single enterprise.
-   * GET enterprises/:id
+   * Display a single usercourseselected.
+   * GET usercourseselecteds/:id
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -56,8 +56,8 @@ class EnterpriseController {
   }
 
   /**
-   * Render a form to update an existing enterprise.
-   * GET enterprises/:id/edit
+   * Render a form to update an existing usercourseselected.
+   * GET usercourseselecteds/:id/edit
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -68,8 +68,8 @@ class EnterpriseController {
   }
 
   /**
-   * Update enterprise details.
-   * PUT or PATCH enterprises/:id
+   * Update usercourseselected details.
+   * PUT or PATCH usercourseselecteds/:id
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -79,8 +79,8 @@ class EnterpriseController {
   }
 
   /**
-   * Delete a enterprise with id.
-   * DELETE enterprises/:id
+   * Delete a usercourseselected with id.
+   * DELETE usercourseselecteds/:id
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -90,4 +90,4 @@ class EnterpriseController {
   }
 }
 
-module.exports = EnterpriseController
+module.exports = UserCourseSelectedController
