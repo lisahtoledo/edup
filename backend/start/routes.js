@@ -8,6 +8,8 @@ Route.get('users/:id', 'UserController.show')
   .middleware('auth')
 Route.put('users/:id', 'UserController.update')
   .middleware('auth')
+Route.delete('users/:id', 'UserController.destroy')
+  .middleware('auth')
 
 /* Login user */
 Route.post('sessions', 'SessionController.login')
