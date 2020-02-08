@@ -1,5 +1,4 @@
 'use strict'
-const User = use('App/Models/User')
 class SessionController {
   async store ({ request, auth, response }) {
 
@@ -10,13 +9,6 @@ class SessionController {
     await auth.attempt(email, password)
 
     return 'Logged in successfully'
-  }
-
-  show ({ auth, params }) {
-    if (auth.user.id !== Number(params.id)) {
-      return "You cannot see someone else's profile"
-    }
-    return auth.user
   }
 
   async logout ({ auth, response, request }) {

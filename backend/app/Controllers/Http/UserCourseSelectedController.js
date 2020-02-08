@@ -9,30 +9,6 @@
  */
 class UserCourseSelectedController {
   /**
-   * Show a list of all usercourseselecteds.
-   * GET usercourseselecteds
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   * @param {View} ctx.view
-   */
-  async index ({ request, response, view }) {
-  }
-
-  /**
-   * Render a form to be used for creating a new usercourseselected.
-   * GET usercourseselecteds/create
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   * @param {View} ctx.view
-   */
-  async create ({ request, response, view }) {
-  }
-
-  /**
    * Create/save a new usercourseselected.
    * POST usercourseselecteds
    *

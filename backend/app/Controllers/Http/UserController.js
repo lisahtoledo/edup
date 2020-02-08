@@ -16,6 +16,13 @@ class UserController {
     await trx.commit()
     return user
   }
+
+  async show ({ auth, params }) {
+    if (auth.user.id !== Number(params.id)) {
+      return "You cannot see someone else's profile"
+    }
+    return auth.user
+  }
 }
 
 module.exports = UserController
