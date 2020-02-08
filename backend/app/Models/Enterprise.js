@@ -3,6 +3,10 @@
 /** @type {typeof import('@adonisjs/lucid/src/Lucid/Model')} */
 const Model = use('Model')
 const Hash = use('Hash')
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1e3ea32cd73f3af41df971935dc6c87aeecd4c7f
 class Enterprise extends Model {
   static boot () {
     super.boot()
@@ -14,6 +18,17 @@ class Enterprise extends Model {
     })
   }
 
+<<<<<<< HEAD
+=======
+  course () {
+    return this.belongsToMany('App/Models/Course')
+  }
+
+  addresses () {
+    return this.hasMany('App/Models/UserAddress')
+  }
+
+>>>>>>> 1e3ea32cd73f3af41df971935dc6c87aeecd4c7f
   tokens () {
     return this.hasMany('App/Models/Token')
   }
