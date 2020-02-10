@@ -9,3 +9,9 @@ tmp
 
 # The development sqlite file
 database/*.sqlite
+
+#Docker on deleveloper mode, not up still
+
+Dockerfile
+docker-compose.yml
+.dockerignore
