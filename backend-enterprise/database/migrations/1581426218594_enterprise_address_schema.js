@@ -11,7 +11,7 @@ class EnterpriseAddressSchema extends Schema {
         .integer( 'enterprise_id' )
         .unsigned()
         .references( 'id' )
-        .inTable( 'enterprise' )
+        .inTable( 'enterprises' )
         .onUpdate( 'CASCADE' )
         .onDelete( 'SET NULL' )
       table.string( 'street' ).notNullable()

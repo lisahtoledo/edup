@@ -1,24 +1,23 @@
 'use strict'
 
 /** @type {import('@adonisjs/lucid/src/Schema')} */
-const Schema = use('Schema')
+const Schema = use( 'Schema' )
 
 class UserSchema extends Schema {
   up () {
-    this.create('users', (table) => {
+    this.create( 'users', ( table ) => {
       table.increments()
-      table.string('username', 80).notNullable().unique()
-      table.string('email', 254).notNullable().unique()
-      table.string('password', 60).notNullable()
-      table.string('token')
-      table.string('nivel', 1).defaultTo('1')
-      table.timestamp('token_created_at')
+      table.string( 'username', 80 ).notNullable().unique()
+      table.string( 'email', 254 ).notNullable().unique()
+      table.string( 'password', 60 ).notNullable()
+      table.string( 'token' )
+      table.timestamp( 'token_created_at' )
       table.timestamps()
-    })
+    } )
   }
 
   down () {
-    this.drop('users')
+    this.drop( 'users' )
   }
 }
 
