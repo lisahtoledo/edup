@@ -7,9 +7,6 @@ tmp
 # Environment variables, never commit this file
 
 
-# The development sqlite file
-database/*.sqlite
-
 #Docker on deleveloper mode, not up still
 
 Dockerfile

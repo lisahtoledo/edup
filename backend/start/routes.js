@@ -35,3 +35,15 @@ Route.post( '/files', 'FileController.store' )
 Route.get( '/files/:id', 'FileController.show' )
   .validator( 'File' )
   .middleware( 'auth' )
+
+
+/* Enterprise */
+Route.post( 'enterprise', 'EnterpriseController.store' )
+
+Route.post( 'loginenterprise', 'SessionController.login' )
+
+/* Enterprise login */
+
+/* person routes */
+//Login
+Route.post( 'person', 'PersonController.store' )

@@ -1,7 +1,7 @@
 'use strict'
 
 /** @type {import('@adonisjs/framework/src/Server')} */
-const Server = use('Server')
+const Server = use( 'Server' )
 
 /*
 |--------------------------------------------------------------------------
@@ -57,6 +57,6 @@ const serverMiddleware = [
 ]
 
 Server
-  .registerGlobal(globalMiddleware)
-  .registerNamed(namedMiddleware)
-  .use(serverMiddleware)
+  .registerGlobal( globalMiddleware )
+  .registerNamed( namedMiddleware )
+  .use( serverMiddleware )

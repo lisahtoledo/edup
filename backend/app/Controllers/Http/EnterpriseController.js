@@ -1,4 +1,6 @@
 'use strict'
+const Enterprise = use( 'App/Models/Enterprise' )
+const Database = use( 'Database' )
 
 /** @typedef {import('@adonisjs/framework/src/Request')} Request */
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
@@ -17,7 +19,7 @@ class EnterpriseController {
    * @param {Response} ctx.response
    * @param {View} ctx.view
    */
-  async index ({ request, response, view }) {
+  async index ( { request, response, view } ) {
   }
 
   /**
@@ -29,7 +31,7 @@ class EnterpriseController {
    * @param {Response} ctx.response
    * @param {View} ctx.view
    */
-  async create ({ request, response, view }) {
+  async create ( { request, response, view } ) {
   }
 
   /**
@@ -40,7 +42,18 @@ class EnterpriseController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async store ({ request, response }) {
+  async store ( { request, response } ) {
+    const data = request.only( ['username', 'email', 'password'] )
+    const addresses = request.input( 'addresses' )
+
+    const trx = await Database.beginTransaction()
+
+    const enterprise = await Enterprise.create( data, trx )
+    await enterprise.addresses().createMany( addresses, trx )
+
+    await trx.commit()
+    return enterprise
+
   }
 
   /**
@@ -52,8 +65,13 @@ class EnterpriseController {
    * @param {Response} ctx.response
    * @param {View} ctx.view
    */
-  async show ({ params, request, response, view }) {
+  async show ( { params, auth } ) {
+    if ( auth.enterprise.id !== Number( params.id ) ) {
+      return "You cannot see someone else's profile"
+    }
+    return auth.enterprise
   }
+
 
   /**
    * Render a form to update an existing enterprise.
@@ -64,7 +82,7 @@ class EnterpriseController {
    * @param {Response} ctx.response
    * @param {View} ctx.view
    */
-  async edit ({ params, request, response, view }) {
+  async edit ( { params, request, response, view } ) {
   }
 
   /**
@@ -75,7 +93,7 @@ class EnterpriseController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async update ({ params, request, response }) {
+  async update ( { params, request, response } ) {
   }
 
   /**
@@ -86,7 +104,7 @@ class EnterpriseController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async destroy ({ params, request, response }) {
+  async destroy ( { params, request, response } ) {
   }
 }
 

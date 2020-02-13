@@ -1,7 +1,7 @@
 'use strict'
 
 /** @type {import('@adonisjs/framework/src/Env')} */
-const Env = use('Env')
+const Env = use( 'Env' )
 
 module.exports = {
   /*
@@ -28,6 +28,23 @@ module.exports = {
   | Session authentication is always persistent.
   |
   */
+  session_enterprise: {
+    serializer: 'lucid',
+    model: 'App/Models/Enterprise',
+    scheme: 'session',
+    uid: 'email',
+    password: 'password'
+  },
+
+  /*
+|--------------------------------------------------------------------------
+| Session
+|--------------------------------------------------------------------------
+|
+| Session authenticator makes use of sessions to authenticate a user.
+| Session authentication is always persistent.
+|
+*/
   session: {
     serializer: 'lucid',
     model: 'App/Models/User',
@@ -73,7 +90,7 @@ module.exports = {
     uid: 'email',
     password: 'password',
     options: {
-      secret: Env.get('APP_KEY')
+      secret: Env.get( 'APP_KEY' )
     }
   },
 
