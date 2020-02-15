@@ -26,10 +26,6 @@ class User extends Model {
     return this.hasMany( 'App/Models/Token' )
   }
 
-  courses () {
-    return this.belongsTo( 'App/Models/Course' )
-  }
-
   enterprise () {
     return this.belongsTo( 'App/Models/Enterprise' )
   }
