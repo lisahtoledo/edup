@@ -1,12 +1,36 @@
 'use strict'
 
-const Route = use('Route')
 
-Route.post('users', 'UserController.store')
-Route.post('sessions', 'SessionController.store')
+/** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
+const Route = use( 'Route' )
 
-Route.post('passwords', 'ForgotPassordController.store')
-Route.put('passwords', 'ForgotPassordController.update')
+/* register user: Enterprise or person commum */
+Route.post( 'user', 'UserController.store' )
 
-Route.post('/files', 'FileController.store')
-Route.get('/files/:id', 'FileController.show')
+/* Log((In) or (Out)) */
+Route.post( 'login', 'SessionController.store' )
+    .middleware( ['guest'] )
+
+Route.post( 'logout', 'SessionController.destroy' )
+    .middleware( ['auth'] )
+
+Route.get( 'user/:id', 'UserController.show' )
+    .middleware( ['auth'] )
+
+/* ForgotPassword */
+Route.post( 'passwords', 'ForgotPassordController.store' )
+Route.put( 'passwords', 'ForgotPassordController.update' )
+
+
+Route.get( 'files/:id', 'FileController.show' )
+Route.group( () => {
+    /* files update */
+    Route.post( 'files', 'FileController.store' )
+    /* Courses */
+    Route.resource( 'courses', 'CourseController' ).apiOnly()
+    /* Application in course */
+    Route.post( 'enterprise.course', 'PersonController.addCourse' )
+} ).middleware( ['auth'] )
+
+
+
