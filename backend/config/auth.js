@@ -17,7 +17,6 @@ module.exports = {
   |
   */
   authenticator: 'session',
-  /* authenticator: 'jwt', */
 
   /*
   |--------------------------------------------------------------------------
@@ -28,23 +27,6 @@ module.exports = {
   | Session authentication is always persistent.
   |
   */
-  session_enterprise: {
-    serializer: 'lucid',
-    model: 'App/Models/Enterprise',
-    scheme: 'session',
-    uid: 'email',
-    password: 'password'
-  },
-
-  /*
-|--------------------------------------------------------------------------
-| Session
-|--------------------------------------------------------------------------
-|
-| Session authenticator makes use of sessions to authenticate a user.
-| Session authentication is always persistent.
-|
-*/
   session: {
     serializer: 'lucid',
     model: 'App/Models/User',

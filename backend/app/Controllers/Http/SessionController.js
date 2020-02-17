@@ -1,26 +1,31 @@
 'use strict'
+
+const User = use( 'App/Models/User' )
+
 class SessionController {
-  async login ( { auth, request, response } ) {
-    try {
-      const { email, password } = request.all()
-      await auth.attempt( email, password )
+    async store ( { request, auth, response } ) {
+        const { email, password } = request.all()
+        try {
+            await auth.attempt( email, password )
+        } catch ( error ) {
+            console.log( 'Algo deu errado: ', error );
 
-      return 'Logged in successfully'
-    } catch ( error ) {
-      return response.status( 401 ).send( { message: 'Usuario ou senha, invalido' } )
-    }
-  }
+            return response.status( error.status ).send( { message: "User not authentozed" } )
+        }
 
-  async logout ( { auth, response } ) {
-    try {
-      await auth.logout()
-        .then( () => console.log( 'Usuario deslogado' ) )
-        .catch( () => console.log( 'Error ao tentar deslogar' ) )
-      return response.status( 200 ).send( { message: 'Usuario deslogado com sucesso' } )
-    } catch ( error ) {
-      return response.status( 500 ).send( 'Algo de errado aconteceu!!', error )
+        return response.status( 200 ).send( { message: "Login sucessfully" } )
     }
-  }
+
+    async destroy ( { auth, response } ) {
+        try {
+            await auth.logout()
+                .then( () => response.status( 200 ).send( { message: "User LogOutSucess" } ) )
+                .catch( () => response.status( 401 ).send( { message: "You loged some alse" } ) )
+        } catch ( error ) {
+            console.log( "Same wrong: ", error );
+
+        }
+    }
 }
 
 module.exports = SessionController

@@ -1,49 +1,36 @@
 'use strict'
 
+
+/** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use( 'Route' )
-// User
-Route.post( 'users', 'UserController.store' )
-  .validator( 'User' )
-Route.get( 'users/:id', 'UserController.show' )
-  .middleware( 'auth' )
-Route.put( 'users/:id', 'UserController.update' )
-  .middleware( 'auth' )
-Route.delete( 'users/:id', 'UserController.destroy' )
-  .middleware( 'auth' )
 
-/* Login user */
-Route.post( 'sessions', 'SessionController.login' )
+/* register user: Enterprise or person commum */
+Route.post( 'user', 'UserController.store' )
 
-/* LogOut user */
-Route.post( 'logout', 'SessionController.logout' )
-  .middleware( 'auth' )
+/* Log((In) or (Out)) */
+Route.post( 'login', 'SessionController.store' )
+    .middleware( ['guest'] )
 
-/* Forgot password */
+Route.post( 'logout', 'SessionController.destroy' )
+    .middleware( ['auth'] )
+
+Route.get( 'user/:id', 'UserController.show' )
+    .middleware( ['auth'] )
+
+/* ForgotPassword */
 Route.post( 'passwords', 'ForgotPassordController.store' )
-  .validator( 'ForgotPassword' )
 Route.put( 'passwords', 'ForgotPassordController.update' )
-  .validator( 'ResetPassword' )
-
-/* Course */
-Route.post( 'enterprises.courses', 'CourseController.register' )
-  .middleware( 'auth' )
-
-/* Upload files */
-Route.post( '/files', 'FileController.store' )
-  .validator( 'File' )
-  .middleware( 'auth' )
-Route.get( '/files/:id', 'FileController.show' )
-  .validator( 'File' )
-  .middleware( 'auth' )
 
 
-/* Enterprise */
-Route.post( 'enterprise', 'EnterpriseController.store' )
+Route.get( 'files/:id', 'FileController.show' )
+Route.group( () => {
+    /* files update */
+    Route.post( 'files', 'FileController.store' )
+    /* Courses */
+    Route.resource( 'courses', 'CourseController' ).apiOnly()
+    /* Application in course */
+    Route.post( 'enterprise.course', 'PersonController.addCourse' )
+} ).middleware( ['auth'] )
 
-Route.post( 'loginenterprise', 'SessionController.login' )
 
-/* Enterprise login */
 
-/* person routes */
-//Login
-Route.post( 'person', 'PersonController.store' )

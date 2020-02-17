@@ -7,9 +7,11 @@
 /**
  * Resourceful controller for interacting with people
  */
+
+const Database = use( 'Database' )
 const Person = use( 'App/Models/Person' )
 const Database = use( 'Database' )
-
+const Course = use( 'App/Models/Course' )
 class PersonController {
   /**
    * Create/save a new person.
@@ -19,15 +21,17 @@ class PersonController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async store ( { request, response } ) {
-    const username = request.input( 'username' )
-    const person = request.input( 'user' )
+  async store ( { request } ) {
+    const data = request.only( ['username'] )
+    const userLoging = request.input( 'user' )
 
-    const user = await Person.create( username )
+    const trx = await Database.beginTransaction()
 
-    await user.user().create( person )
+    const person = await Person.create( data, trx )
+    await person.user().create( userLoging, trx )
 
-    return response.send( user )
+    await trx.commit()
+    return person
   }
 
   /**
@@ -62,6 +66,12 @@ class PersonController {
    * @param {Response} ctx.response
    */
   async destroy ( { params, request, response } ) {
+  }
+
+  async addCourse ( { params, request, response } ) {
+    const course = await Course.findOrFail( params.id )
+
+    return course
   }
 }
 

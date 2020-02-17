@@ -4,9 +4,6 @@
 const Model = use( 'Model' )
 
 class Enterprise extends Model {
-    courses () {
-        return this.hasMany( 'App/Models/Course' )
-    }
     user () {
         return this.hasOne( 'App/Models/User' )
     }

@@ -16,13 +16,9 @@ const providers = [
   '@adonisjs/bodyparser/providers/BodyParserProvider',
   '@adonisjs/cors/providers/CorsProvider',
   '@adonisjs/lucid/providers/LucidProvider',
+  '@adonisjs/session/providers/SessionProvider',
   '@adonisjs/mail/providers/MailProvider',
-  '@adonisjs/framework/providers/ViewProvider',
-  '@adonisjs/redis/providers/RedisProvider',
-  'adonis-kue/providers/KueProvider',
-  '@adonisjs/validator/providers/ValidatorProvider',
-  '@adonisjs/antl/providers/AntlProvider',
-  '@adonisjs/session/providers/SessionProvider'
+  '@adonisjs/framework/providers/ViewProvider'
 ]
 
 /*
@@ -35,8 +31,7 @@ const providers = [
 |
 */
 const aceProviders = [
-  '@adonisjs/lucid/providers/MigrationsProvider',
-  'adonis-kue/providers/CommandsProvider'
+  '@adonisjs/lucid/providers/MigrationsProvider'
 ]
 
 /*
@@ -63,16 +58,4 @@ const aliases = {}
 */
 const commands = []
 
-/*
-|--------------------------------------------------------------------------
-| Jobs
-|--------------------------------------------------------------------------
-|
-| Here you store your queue jobs
-|
-*/
-const jobs = [
-  'App/Jobs/NewTaskMail'
-]
-
-module.exports = { providers, aceProviders, aliases, commands, jobs }
+module.exports = { providers, aceProviders, aliases, commands }

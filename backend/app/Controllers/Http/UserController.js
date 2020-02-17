@@ -2,61 +2,42 @@
 
 const User = use( 'App/Models/User' )
 const Database = use( 'Database' )
+const Enterprise = use( 'App/Models/Enterprise' )
 
 class UserController {
-  async store ( { request } ) {
-    const data = request.only( ['username', 'email', 'password'] )
-    const addresses = request.input( 'addresses' )
 
-    const trx = await Database.beginTransaction()
+    async store ( { request } ) {
+        const data = request.only( ['email', 'password', 'isEnterprise'] )
+        const person = request.input( 'person' )
 
-    const user = await User.create( data, trx )
-    await user.addresses().createMany( addresses, trx )
+        const trx = await Database.beginTransaction()
 
-    await trx.commit()
-    return user
-  }
+        const user = await User.create( data, trx )
+        if ( data.isEnterprise === '1' ) {
+            await user.enterprise().createMany( person, trx )
+            await trx.commit()
+            return user
+        } else {
+            await user.person().createMany( person, trx )
 
-  async show ( { auth, params } ) {
-    if ( auth.user.id !== Number( params.id ) ) {
-      return "You cannot see someone else's profile"
-    }
-    return auth.user
-  }
-
-  async update ( { auth, params, request } ) {
-    if ( auth.user.id !== Number( params.id ) ) {
-      return "You cannot see someone else's profile"
+            await trx.commit()
+            return user
+        }
     }
 
-    const data = request.only( ['username', 'email', 'password'] )
-    const addresses = request.input( 'addresses' )
-
-    const trx = await Database.beginTransaction()
-    const user = await User.findOrFail( params.id )
-
-    user.merge( data, ...addresses, trx )
-
-    await user.save( trx )
-
-    await user.addresses().createMany( addresses, trx )
-    trx.commit()
-
-    return user
-  }
-
-  async destroy ( { auth, params } ) {
-    if ( auth.user.id !== Number( params.id ) ) {
-      return "You cannot see someone else's profile"
+    async show ( { auth, params } ) {
+        if ( auth.user.id !== Number( params.id ) ) {
+            return "You cannot see someone else's profile"
+        }
+        const usuario = await auth.user
+        const enterprise = Enterprise.findOrFail( usuario.id )
+        return enterprise
+        /* return auth.user */
     }
-    try {
-      const user = await User.findOrFail( params.id )
-      await user.delete()
-      return 'Usuario deletado com sucesso'
-    } catch ( error ) {
-      return 'Algo deu erro com a exclusão de usuario'
+
+    async update () {
+
     }
-  }
 }
 
 module.exports = UserController

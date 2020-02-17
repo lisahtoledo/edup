@@ -5,10 +5,7 @@ node_modules
 tmp
 
 # Environment variables, never commit this file
+.env
 
-
-#Docker on deleveloper mode, not up still
-
-Dockerfile
-docker-compose.yml
-.dockerignore
+# The development sqlite file
+database/*.sqlite
