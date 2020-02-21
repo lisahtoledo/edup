@@ -6,8 +6,8 @@
 
 const Course = use( 'App/Models/Course' )
 const Enterprise = use( 'App/Models/Enterprise' )
-const User = use( 'App/Models/User' )
 const Databsae = use( 'Database' )
+
 class CourseController {
   /**
    * Show a list of all courses.
@@ -18,8 +18,11 @@ class CourseController {
    * @param {Response} ctx.response
    * @param {View} ctx.view
    */
-  async index ( { request, response, view } ) {
-    const courses = await Course.query().with( 'enterprise' ).fetch()
+  async index ( { params } ) {
+    const courses = await Course.query()
+      .where( 'enterprise_id', params.enterprise_id )
+      .with( 'enterprise' )
+      .fetch()
 
     return courses
   }
@@ -32,16 +35,16 @@ class CourseController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async store ( { request, auth } ) {
-    const data = request.only( ['title', 'description'] )
-
-    const id = await Databsae
-      .select( 'id' )
-      .table( 'enterprises' )
-      .where( { user_id: auth.user.id } )
-
+  async store ( { request, auth, params, response } ) {
+    const data = request.only( [
+      'title',
+      'description',
+      'nicho',
+      'due_date',
+      'person_id'
+    ] )
     const course = await Course
-      .create( { ...data, enterprise_id: id[0].id } )
+      .create( { ...data, enterprise_id: params.enterprise_id } )
 
     return course
   }
@@ -55,12 +58,17 @@ class CourseController {
    * @param {Response} ctx.response
    * @param {View} ctx.view
    */
-  async show ( { params, request, response, view } ) {
-    const course = await Course.findOrFail( params.id )
+  async show ( { params } ) {
+    try {
+      const course = await Course.findOrFail( params.id )
 
-    await course.load( 'enterprise' )
+      await course.load( 'enterprise' )
 
-    return course
+      return course
+
+    } catch ( error ) {
+      console.log( `Same wrong on: ${error}` );
+    }
   }
 
 
@@ -73,12 +81,17 @@ class CourseController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async update ( { params, request, response } ) {
+  async update ( { params, request } ) {
     const course = await Course.findOrFail( params.id )
-    const data = request.only( ['title', 'description'] )
+    const data = request.only( [
+      'title',
+      'description',
+      'nicho',
+      'due_date',
+      'person_id'
+    ] )
 
     course.merge( data )
-
     await course.save()
 
     return course
@@ -92,10 +105,12 @@ class CourseController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async destroy ( { params, request, response } ) {
+  async destroy ( { params, response } ) {
     const course = await Course.findOrFail( params.id )
-
-    await course.delete()
+    const enterprise = await Enterprise.findOrFail( course.enterprise_id )
+    if ( course.enterprise_id === enterprise.id )
+      return await course.delete()
+    return response.send( 'Something wrong' )
   }
 }
 

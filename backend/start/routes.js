@@ -27,10 +27,9 @@ Route.group( () => {
     /* files update */
     Route.post( 'files', 'FileController.store' )
     /* Courses */
-    Route.resource( 'courses', 'CourseController' ).apiOnly()
-    /* Application in course */
-    Route.post( 'enterprise.course', 'PersonController.addCourse' )
+    Route.resource( 'enterprise.course', 'CourseController' ).apiOnly()
+    /* Person add course */
+
+
 } ).middleware( ['auth'] )
-
-
 

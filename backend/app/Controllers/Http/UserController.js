@@ -32,11 +32,12 @@ class UserController {
         const usuario = await auth.user
         const enterprise = Enterprise.findOrFail( usuario.id )
         return enterprise
-        /* return auth.user */
     }
 
-    async update () {
+    async destroy ( { auth } ) {
+        const user = await User.findOrFail( auth.user.id )
 
+        await user.delete()
     }
 }
 

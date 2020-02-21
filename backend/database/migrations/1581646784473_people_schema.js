@@ -18,6 +18,9 @@ class PeopleSchema extends Schema {
       table
         .string( 'username', 80 )
         .notNullable()
+      table
+        .enu( 'etnia', ['branco', 'negro', 'outros'] )
+        .notNullable()
       table.timestamps()
     } )
   }

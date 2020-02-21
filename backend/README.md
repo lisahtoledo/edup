@@ -27,9 +27,8 @@ Run the following command to run startup migrations.
 adonis migration:run
 ```
 
-
-key_env
-
+ variasveis env
+ 
 HOST=127.0.0.1
 PORT=3333
 NODE_ENV=development
