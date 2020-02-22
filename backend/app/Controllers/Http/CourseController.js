@@ -6,7 +6,8 @@
 
 const Course = use( 'App/Models/Course' )
 const Enterprise = use( 'App/Models/Enterprise' )
-const Databsae = use( 'Database' )
+const User = use( 'App/Models/User' )
+const Database = use( 'Database' )
 
 class CourseController {
   /**
@@ -81,19 +82,37 @@ class CourseController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async update ( { params, request } ) {
+  async update ( { params, request, auth } ) {
     const course = await Course.findOrFail( params.id )
-    const data = request.only( [
+    let data = request.only( [
       'title',
       'description',
       'nicho',
       'due_date',
-      'person_id'
-    ] )
 
+    ] )
+    const user_auth = await auth.getUser()
+    const user = await User.findOrFail( user_auth.id )
+
+    if ( user.isEnterprise === '0' ) {
+      const person = await Database.select( 'id', 'etnia' )
+        .from( 'people' )
+        .where( 'user_id', user_auth.id )
+
+      /*       if ( person.etnia !== course.nicho ) {
+              return
+            } */
+
+      let value
+      if ( course.person_id === person[0].id ) {
+        value = { person_id: null }
+      } else {
+        value = { person_id: person[0].id }
+      }
+      data = value
+    }
     course.merge( data )
     await course.save()
-
     return course
   }
 
