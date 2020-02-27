@@ -19,11 +19,10 @@ class SessionController {
     async destroy ( { auth, response } ) {
         try {
             await auth.logout()
-                .then( () => response.status( 200 ).send( { message: "User LogOutSucess" } ) )
+                .then( () => response.status( 200 ).send( { message: "User Logout Success" } ) )
                 .catch( () => response.status( 401 ).send( { message: "You loged some alse" } ) )
         } catch ( error ) {
             console.log( "Same wrong: ", error );
-
         }
     }
 }
