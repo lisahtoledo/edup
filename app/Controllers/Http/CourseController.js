@@ -7,7 +7,8 @@
 const Course = use( 'App/Models/Course' )
 const Enterprise = use( 'App/Models/Enterprise' )
 const User = use( 'App/Models/User' )
-const Databsae = use( 'Database' )
+const Database = use( 'Database' )
+
 class CourseController {
   /**
    * Show a list of all courses.

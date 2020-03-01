@@ -26,13 +26,13 @@ class EnterpriseController {
   async store ( { request, response } ) {
     /*     const data = request.only( ['cnpj', 'name_enterprise', 'raz_soc'] )
         const log = request.input( 'log' )
-
+    
         const trx = await Database.beginTransaction()
-
+    
         const enterprise = await Enterprise.create( data, trx )
-
+    
         await enterprise.user().create( log, trx )
-
+    
         trx.commit()
         return enteprise */
   }

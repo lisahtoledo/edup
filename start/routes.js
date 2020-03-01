@@ -5,21 +5,33 @@
 const Route = use( 'Route' )
 
 /* register user: Enterprise or person commum */
-Route.post( 'user', 'UserController.store' )
+Route
+    .post( 'users', 'UserController.store' )
+    .validator( 'User' )
+
 
 /* Log((In) or (Out)) */
-Route.post( 'login', 'SessionController.store' )
+Route
+    .post( 'login', 'SessionController.store' )
     .middleware( ['guest'] )
+    .validator( 'Session' )
 
-Route.post( 'logout', 'SessionController.destroy' )
+Route
+    .post( 'logout', 'SessionController.destroy' )
     .middleware( ['auth'] )
 
-Route.get( 'user/:id', 'UserController.show' )
+Route
+    .get( 'user/:id', 'UserController.show' )
     .middleware( ['auth'] )
 
 /* ForgotPassword */
-Route.post( 'passwords', 'ForgotPassordController.store' )
-Route.put( 'passwords', 'ForgotPassordController.update' )
+Route
+    .post( 'passwords', 'ForgotPassordController.store' )
+    .validator( 'ForgotPassword' )
+
+Route
+    .put( 'passwords', 'ForgotPassordController.update' )
+    .validator( 'ResetPassword' )
 
 
 Route.get( 'files/:id', 'FileController.show' )
@@ -27,10 +39,7 @@ Route.group( () => {
     /* files update */
     Route.post( 'files', 'FileController.store' )
     /* Courses */
-    Route.resource( 'courses', 'CourseController' ).apiOnly()
-    /* Application in course */
-    Route.post( 'enterprise.course', 'PersonController.addCourse' )
+    Route.resource( 'enterprise.course', 'CourseController' ).apiOnly()
+    /* Person add course */
 } ).middleware( ['auth'] )
-
-
 

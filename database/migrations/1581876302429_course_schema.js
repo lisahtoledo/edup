@@ -32,10 +32,7 @@ class CourseSchema extends Schema {
       table.string( 'title' ).notNullable()
       table.text( 'description' ).notNullable()
       table.timestamp( 'due_date' )
-<<<<<<< HEAD
-=======
       table.string( 'nicho', 50 )
->>>>>>> 8bd24fd9294dd9b03fd9a9cfb7e9725c1f0b0bdf
       table.timestamps()
     } )
   }
